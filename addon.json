@@ -1,0 +1,6 @@
+{
+	"title": "SpawnGuard",
+	"type": "tool",
+	"tags": [ "build", "roleplay" ],
+	"ignore": [ "*.md", ".git*", "*.xcf" ]
+}

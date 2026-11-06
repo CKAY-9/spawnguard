@@ -24,7 +24,10 @@ Config.DefaultHeight = 128
 
 -- Damage protection (sv_damage.lua). Players inside a box take no damage,
 -- unless they were damaged outside spawn within the last CombatTagTime seconds.
+-- With NoSpawnAttacks, players inside a box also can't deal damage (same
+-- combat tag exception, so a tagged player can fight back).
 Config.GodMode = true                              -- [setting]
+Config.NoSpawnAttacks = true                       -- [setting]
 Config.CombatTagTime = 5                           -- [setting]
 
 -- Prop blocking (sv_props.lua). Player props of these classes can't be spawned

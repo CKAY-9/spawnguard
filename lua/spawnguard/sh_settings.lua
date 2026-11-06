@@ -18,6 +18,8 @@ SpawnGuard.SettingsSchema = {
 		help = "Groups that inherit from a listed group are allowed too. Admin mods can also grant SpawnGuard.Create / SpawnGuard.Remove." },
 
 	{ key = "GodMode", type = "bool", category = "Protection", label = "Players can't be damaged inside spawn" },
+	{ key = "NoSpawnAttacks", type = "bool", category = "Protection", label = "Players can't deal damage from inside spawn",
+		help = "Combat tagged players can still fight back." },
 	{ key = "CombatTagTime", type = "number", category = "Protection", label = "Combat tag (seconds)", min = 0, max = 60, decimals = 0,
 		help = "After taking damage outside spawn, a player isn't protected in spawn for this long." },
 	{ key = "BlockProps", type = "bool", category = "Protection", label = "Block and remove props inside spawn" },

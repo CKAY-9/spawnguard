@@ -18,7 +18,7 @@ Saved boxes are drawn in green while you hold either tool.
 
 - **Damage:** players inside a box take no damage and deal none. A player damaged *outside* spawn in the last 5 seconds is **combat tagged**: they aren't protected and can fight back, so nobody escapes a fight by running into spawn. Damage taken inside spawn never starts the tag, and dying clears it. The HUD shows a notice in spawn, or a countdown while tagged.
 - **Props:** spawning a prop into a box is refused, and props that end up in one (physgun, thrown, duped) are removed within half a second with a chat message to the owner. Map props are never removed and admins aren't exempt. Classes and sweep rate: `Config.PropClasses`, `Config.PropSweepInterval`.
-- **Glow:** boxes fade in from 450 units and reach full brightness at 64, with a scrolling "SPAWN" banner on each wall. The glow dims while you're inside and hides while you hold a SpawnGuard tool. Players can turn it off with `spawnguard_halo 0` or under **Utilities → SpawnGuard → Client Settings**.
+- **Glow:** boxes fade in from 450 units and reach full brightness at 64, with a scrolling "SPAWN" banner on each wall. The glow is hidden while you're inside any box and while you hold a SpawnGuard tool. Players can turn it off with `spawnguard_halo 0` or under **Utilities → SpawnGuard → Client Settings**.
 
 ## Server settings
 

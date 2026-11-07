@@ -61,7 +61,6 @@ Config.HaloNear = 64                               -- [setting] full brightness 
 Config.HaloFar = 450                               -- [setting] invisible beyond this distance
 Config.HaloWallAlpha = 0.6                         -- wall brightness at the floor, relative to the edges
 Config.HaloWallTopScale = 0.3                      -- wall brightness at the top, relative to the floor (0 = fade out fully)
-Config.HaloInsideScale = 0.5                       -- brightness multiplier while standing inside a box
 Config.HaloCoreWidth = 2                           -- edge beam widths
 Config.HaloGlowWidth = 12
 Config.HaloPulse = true

@@ -2,7 +2,8 @@
 --   * Edges: additive beams, a thin bright core plus a wide soft glow pass.
 --   * Side walls: additive gradient, brightest at the floor, fading upward.
 --   * Brightness scales with distance (HaloFar -> HaloNear) and a slow pulse.
--- Hidden while holding a SpawnGuard tool (cl_render.lua draws outlines then).
+-- Hidden while standing inside any box, and while holding a SpawnGuard tool
+-- (cl_render.lua draws outlines then).
 -- Players can turn it off with `spawnguard_halo 0` or in the Q menu
 -- (Utilities -> SpawnGuard -> Client Settings).
 
@@ -215,11 +216,17 @@ hook.Add( "PostDrawTranslucentRenderables", "SpawnGuard.Halo", function( depth, 
 
 	local eye = EyePos()
 
-	for _, box in ipairs( SpawnGuard.ClientBoxes ) do
-		local dist = distToBox( pos, box )
-		local k = fadeFor( dist )
+	-- Nothing is drawn while standing inside a box (the HUD notice covers it),
+	-- so neither that box nor any nearby zone glows around us.
+	local dists = {}
+	for i, box in ipairs( SpawnGuard.ClientBoxes ) do
+		dists[ i ] = distToBox( pos, box )
+		if dists[ i ] == 0 then return end
+	end
+
+	for i, box in ipairs( SpawnGuard.ClientBoxes ) do
+		local k = fadeFor( dists[ i ] )
 		if k > 0 then
-			if dist == 0 then k = k * Config.HaloInsideScale end
 			drawHalo( box, k * pulse )
 
 			if Config.HaloTextEnabled then
